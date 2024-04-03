@@ -1,0 +1,309 @@
+/*RESET*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li,
+menu {
+    list-style: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.d-none {
+    display: none;
+}
+
+
+.wrapper {
+    background: rgb(217, 219, 215);
+    background: linear-gradient(0deg, rgba(217, 219, 215, 1) 84%, rgba(78, 147, 137, 1) 84%);
+}
+
+/*LAYOUT*/
+
+.img-size {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.col-2h .card-img {
+    display: flex;
+    background-color: white;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-font {
+    width: 100%;
+    display: flex;
+    padding: 13px;
+    font-size: 25px;
+    color: lightskyblue;
+    border-radius: 20px;
+}
+
+.message-bg-green {
+    background-color: lightgreen;
+    width: 60%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.message-bg-white {
+    background-color: white;
+    width: 60%;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+.finger-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.write-text {
+
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+
+}
+
+.icon-write {
+    display: none;
+}
+
+.bb-lightgrey {
+    border-bottom: 1px solid lightgrey;
+    text-align: center;
+    padding: 5px;
+}
+
+.br-lightgrey {
+    border-right: 1px solid lightgrey;
+}
+
+.side-tablet {
+    width: 100%;
+}
+
+
+/*COLS*/
+.col-1h {
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.col-2h {
+    width: 100%;
+    padding: 10px;
+
+}
+
+.col-3h {
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    margin: 12px;
+    gap: 40px;
+    padding-left: 20px;
+    padding: 10px;
+}
+
+.col-4h {
+    width: calc(100% - 20px);
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.col-1c {
+    width: 100%;
+    padding: 5px;
+}
+
+.col-2c {
+    width: 100%;
+    padding: 20px;
+    justify-content: flex-end;
+
+}
+
+.col-3c {
+    width: 100%;
+}
+
+.col-4c {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+}
+
+
+
+/*CARDS*/
+.card.img {
+    width: 30%;
+    display: none;
+}
+
+.card-text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 20px;
+
+}
+
+.card-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: grey;
+    display: none;
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+input {
+    border: none;
+}
+
+/*CONTAINERS*/
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.container {
+
+    display: flex;
+}
+
+.container-aside {
+    width: 350px;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: scroll;
+}
+
+.container-central {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container-tablet {
+    background-color: white;
+    width: 80px;
+    display: none;
+    text-align: center;
+}
+
+
+/*CSS-FLEX*/
+.d-flex {
+    display: flex;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+/*COLOR BG AND COLOR*/
+
+.bg-lightgrey {
+    background-color: rgb(247, 247, 247);
+}
+
+.bg-lightblue {
+    background-color: lightskyblue;
+}
+
+.c-bluesky {
+    color: lightskyblue;
+}
+
+.c-grey {
+    color: grey;
+}
+
+
+
+.containe-img {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+
+}
+
+/*MEDIA QUERYS*/
+
+/*TABLET*/
+@media (min-width:780px) {
+    .icon-write {
+        display: flex;
+    }
+
+    .card-icon {
+        display: flex;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        padding: 30px 0;
+    }
+
+    .container-tablet {
+        display: flex;
+    }
+}
+
+@media (min-width:1080px) {
+    .d-none {
+        display: flex;
+    }
+
+    .container-central {
+        width: 70%;
+    }
+
+    .container-tablet {
+        display: none;
+    }
+
+}

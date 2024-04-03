@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOLZAPP</title>
+    <script src="https://kit.fontawesome.com/3a1d17ee5d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="wrapper">
+
+            <div class="container">
+                <div class="container-aside bg-lightgrey d-none">
+                    <div class="row">
+                        <div class="col-1h d-flex ">
+                            <img src="./img/avatar_1.jpg" alt="" class="img-size">
+                            <ul class="d-flex ai-center gap-40">
+                                <li><i class="fa-solid fa-circle-notch c-grey"></i></li>
+                                <li><i class="fa-solid fa-message c-grey"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical c-grey"></i></li>
+                            </ul>
+                        </div>
+                        <!--BLUE BAR-->
+                        <div class="col-2h bg-lightblue d-flex">
+                            <div class="card-img">
+                                <div><i class="fa-solid fa-bell-slash icon-font"></i></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Ricevi notifiche di nuovi messaggi</strong></div>
+                                <a href="">Attiva notifiche desktop</a>
+                            </div>
+
+                        </div>
+                        <!--SEARCH CONTACT BAR-->
+                        <div class="col-3h d-flex">
+                            <div><i class="fa-solid fa-magnifying-glass c-grey"></i></div>
+                            <input type="" placeholder="cerca o inizia una nuova chat">
+
+                        </div>
+                        <!--CHATS CARDS-->
+                        <div class="col-4h d-flex" v-for="(contact, i) in contacts">
+                            <div class="card-img">
+                                 <div><img :src="contact.avatar" alt="" class="img-size"></div> 
+                            </div>
+                            <div class="card-text">
+                                <div><strong>{{contact.name}}</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_3.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Salvatore</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div>
+
+
+                         <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_4.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Alberto</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div>  -->
+
+
+                        <!-- <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_5.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Luca</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div>  -->
+
+                        <!-- 
+                        <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_6.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Caterina</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div> -->
+
+
+                        <!-- <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_7.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Massimo</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div> -->
+
+                        <!-- 
+                        <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_8.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Raffaele</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div>
+                        </div> -->
+
+
+                        <!-- <div class="col-4h d-flex">
+                            <div class="card-img">
+                                <div><img src="./img/avatar_io.jpg" alt="" class="img-size"></div>
+                            </div>
+                            <div class="card-text">
+                                <div><strong>Maria</strong></div>
+                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                            </div>
+                            <div class="card-time">
+                                <div class="c-grey">16:15</div>
+                            </div> 
+                        </div>  -->
+
+                    </div>
+                </div>
+
+                <!--IMG FOR TABLET-->
+                <div class="container-tablet">
+                    <ul class="side-tablet">
+                        <li class="bb-lightgrey bg-lightgrey br-lightgrey"><img src="./img/avatar_1.jpg" alt=""
+                                class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_2.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_1.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_4.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_5.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_6.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_7.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_8.jpg" alt="" class="img-size "></li>
+                        <li class="bb-lightgrey"><img src="./img/avatar_io.jpg" alt="" class="img-size "></li>
+                    </ul>
+                </div>
+
+
+                <!--CENTRAL CONTAINER-->
+                <div class="container-central">
+                    <div class="col-1c bg-lightgrey d-flex">
+                        <div class="card-img">
+                            <div><img src="./img/avatar_1.jpg" alt="" class="img-size"></div>
+                        </div>
+                        <div class="card-text">
+                            <div><strong>Michele</strong></div>
+                            <div class="c-grey">Ultimo accesso oggi alle 16:26</div>
+                        </div>
+                        <div class="card-icon gap-40">
+                            <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div><i class="fa-solid fa-paperclip"></i></div>
+                            <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+
+                        </div>
+                    </div>
+
+                    <div class="containe-img">
+                        <div class="col-2c d-flex">
+
+                            <div class="message-bg-green d-flex">
+                                <div>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil eum esse
+                                    modi
+                                    reprehenderit doloremque eaque, odit explicabo provident consequuntur earum quas
+                                    itaque
+                                    reiciendis veritatis numquam consequatur soluta praesentium similique corporis.
+                                    Dicta
+                                    recusandae ab harum placeat, voluptate soluta adipisci rerum?
+                                </div>
+                                <div class="finger-message">
+                                    <i class="fa-solid fa-chevron-down c-grey"></i>
+                                    <div class="c-grey">16:13</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3c">
+                            <div class="message-bg-white d-flex">
+                                <div>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil eum esse
+                                    modi
+                                    reprehenderit doloremque eaque, odit explicabo provident consequuntur earum quas
+                                    itaque
+                                    reiciendis veritatis numquam consequatur soluta praesentium similique corporis.
+                                    Dicta
+                                    recusandae ab harum placeat, voluptate soluta adipisci rerum?
+                                </div>
+                                <div class="finger-message">
+                                    <i class="fa-solid fa-chevron-down c-grey"></i>
+                                    <div class="c-grey">16:13</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-4c bg-lightgrey d-flex">
+                        <div><i class="fa-regular fa-face-smile icon-write"></i></div>
+                        <input class="write-text" placeholder="scrivi messaggio">
+                        <div><i class="fa-solid fa-microphone icon-write"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
