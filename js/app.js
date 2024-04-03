@@ -167,5 +167,21 @@ createApp({
         }
       ]
     }
+
+  },
+
+  methods: {
+    recivedAndSentMessage(i){
+      if(this.contacts[i].messages[i].status === 'received'){
+
+      }
+    }
+
+
+  },
+
+  mounted() {
+    console.log(this.contacts[i].messages[i].status);
   }
+
 }).mount('#app')
