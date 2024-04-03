@@ -44,7 +44,7 @@
 
                         </div>
                         <!--CHATS CARDS-->
-                        <div class="col-4h d-flex" v-for="(contact, i) in contacts">
+                        <div class="col-4h d-flex" v-for="(contact, i) in contacts" @click="currentChat = i">
                             <div class="card-img">
                                 <div><img :src="contact.avatar" alt="" class="img-size"></div>
                             </div>
@@ -194,10 +194,10 @@
                     </div>
 
                     <div class="containe-img">
-                        <div class="col-2c d-flex">
+                        <div class="col-2c ">
 
-                            <div class="message-bg-green d-flex"  v-for="(contact,i) in contacts" >
-                                <div  v-for="(message, i) in contacts[i].messages">
+                            <div :class="message.status" v-for="(message, i) in contacts[currentChat].messages">
+                                <div  >
                                    {{message.message}}
                                 </div>
                                 <div class="finger-message">
@@ -205,19 +205,6 @@
                                     <div class="c-grey">16:13</div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-3c">
-                            <div class="message-bg-white d-flex"  v-for="(contact,i) in contacts">
-                                <div v-for="(message, i) in contacts[i].messages">
-                                 {{message.message}}
-                                </div>
-                                <div class="finger-message">
-                                    <i class="fa-solid fa-chevron-down c-grey"></i>
-                                    <div class="c-grey">16:13</div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 

@@ -165,23 +165,20 @@ createApp({
             }
           ],
         }
-      ]
+      ],
+
+      currentChat: 0
     }
 
   },
 
   methods: {
-    recivedAndSentMessage(i){
-      if(this.contacts[i].messages[i].status === 'received'){
-
-      }
-    }
 
 
   },
 
   mounted() {
-    console.log(this.contacts[i].messages[i].status);
+    console.log(this.contacts[0].messages[0].status);
   }
 
 }).mount('#app')

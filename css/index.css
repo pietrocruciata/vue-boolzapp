@@ -53,19 +53,20 @@ menu {
     border-radius: 20px;
 }
 
-.message-bg-green {
+.sent{
     background-color: lightgreen;
     width: 60%;
     border-radius: 20px;
     padding: 20px;
 }
 
-.message-bg-white {
+.received{
     background-color: white;
     width: 60%;
     border-radius: 20px;
     padding: 20px;
     margin-left: 30px;
+    text-align: start;
 }
 
 .finger-message {
@@ -134,6 +135,11 @@ menu {
     background-color: white;
     padding: 10px;
     border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.col-4h:hover{
+    background-color: rgb(209, 213, 217);
 }
 
 .col-1c {
@@ -195,6 +201,8 @@ menu {
 input {
     border: none;
 }
+
+
 
 /*CONTAINERS*/
 
