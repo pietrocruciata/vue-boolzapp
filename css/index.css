@@ -55,17 +55,26 @@ menu {
 
 .sent {
     background-color: lightgreen;
-    width: 60%;
+    width: 50%;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     align-self: flex-end;
+    justify-content: space-between;
+    display: flex;
+}
+
+select{
+border: none;
+width: 15px;
 }
 
 .received {
     background-color: white;
-    width: 60%;
+    width: 50%;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
 
 }
 

@@ -166,7 +166,7 @@ createApp({
           ],
         }
       ],
-      search:'',
+      search: '',
       newMessage: '',
       currentChat: 0
     }
@@ -194,6 +194,14 @@ createApp({
         }, 1000)
       }
     },
+    
+    deleteMessage() {
+      this.contacts[this.currentChat].messages.splice(i, 1)
+      console.log('sto eliminando il messaggio');
+    }
+  },
+
+  computed: {
 
   },
 

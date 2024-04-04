@@ -44,13 +44,16 @@
 
                         </div>
                         <!--CHATS CARDS-->
-                        <div class="col-4h d-flex contact" v-for="(contact, i) in contacts" @click="currentChat = i" :class="contact.name.toUpperCase().includes(search) ? '': 'hidden'">
+                        <div class="col-4h d-flex contact" v-for="(contact, i) in contacts" @click="currentChat = i" :class="contact.name.toLowerCase().includes(search) || contact.name.toUpperCase().includes(search)  ? '': 'hidden'">
                             <div class="card-img">
                                 <div><img :src="contact.avatar" alt="" class="img-size"></div>
                             </div>
                             <div class="card-text">
                                 <div><strong>{{contact.name}}</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
+                                <div>
+                                    <div class="c-grey">{{contact.messages.at(-1).message}}</div>
+                                </div>
+                                
                             </div>
                             <div class="card-time">
                                 <div class="c-grey">16:15</div>
@@ -105,7 +108,12 @@
                                     {{message.message}}
                                 </div>
                                 <div class="finger-message">
-                                    <i class="fa-solid fa-chevron-down c-grey"></i>
+                                    <select name="" id="">
+                                        
+                                        <option value="">message info</option>
+                                        <option value="" @click=" deleteMessage()">delete message</option>
+                                        
+                                    </select>
                                     <div class="c-grey">{{message.date.slice(11,16)}}</div>
                                 </div>
                             </div>
