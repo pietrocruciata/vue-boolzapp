@@ -166,6 +166,7 @@ createApp({
           ],
         }
       ],
+      search:'',
       newMessage: '',
       currentChat: 0
     }
@@ -192,16 +193,12 @@ createApp({
           this.newMessage = ''
         }, 1000)
       }
-
-
-
     },
 
   },
 
   mounted() {
-    console.log(this.contacts[0].messages[0].status);
-    console.log(this.addMessage());
+
   }
 
 }).mount('#app')

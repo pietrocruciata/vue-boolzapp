@@ -13,7 +13,7 @@ menu {
 
 .row {
     display: flex;
-    
+
     flex-direction: column;
 }
 
@@ -53,19 +53,20 @@ menu {
     border-radius: 20px;
 }
 
-.sent{
+.sent {
     background-color: lightgreen;
     width: 60%;
     border-radius: 20px;
     padding: 20px;
+    align-self: flex-end;
 }
 
-.received{
+.received {
     background-color: white;
     width: 60%;
     border-radius: 20px;
     padding: 20px;
-    
+
 }
 
 .finger-message {
@@ -137,7 +138,7 @@ menu {
     cursor: pointer;
 }
 
-.col-4h:hover{
+.col-4h:hover {
     background-color: rgb(209, 213, 217);
 }
 
@@ -149,7 +150,7 @@ menu {
 .col-2c {
     width: 100%;
     padding: 20px;
-    justify-content: flex-end;
+    flex-direction: column;
     gap: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -199,6 +200,10 @@ menu {
 
 input {
     border: none;
+}
+
+.contact.hidden{
+    display: none;
 }
 
 

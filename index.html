@@ -40,11 +40,11 @@
                         <!--SEARCH CONTACT BAR-->
                         <div class="col-3h d-flex">
                             <div><i class="fa-solid fa-magnifying-glass c-grey"></i></div>
-                            <input type="" placeholder="cerca o inizia una nuova chat">
+                            <input type="" placeholder="cerca o inizia una nuova chat" v-model="search">
 
                         </div>
                         <!--CHATS CARDS-->
-                        <div class="col-4h d-flex" v-for="(contact, i) in contacts" @click="currentChat = i">
+                        <div class="col-4h d-flex contact" v-for="(contact, i) in contacts" @click="currentChat = i" :class="contact.name.toUpperCase().includes(search) ? '': 'hidden'">
                             <div class="card-img">
                                 <div><img :src="contact.avatar" alt="" class="img-size"></div>
                             </div>
@@ -95,27 +95,28 @@
                     </div>
 
                     <div class="containe-img">
-                        
 
 
-                            <div class="col-2c ">
 
-                                <div :class="message.status" v-for="(message, i) in contacts[currentChat].messages">
-                                    <div>
-                                        {{message.message}}
-                                    </div>
-                                    <div class="finger-message">
-                                        <i class="fa-solid fa-chevron-down c-grey"></i>
-                                        <div class="c-grey">{{message.date.slice(11,16)}}</div>
-                                    </div>
+                        <div class="col-2c ">
+
+                            <div :class="message.status" v-for="(message, i) in contacts[currentChat].messages">
+                                <div>
+                                    {{message.message}}
+                                </div>
+                                <div class="finger-message">
+                                    <i class="fa-solid fa-chevron-down c-grey"></i>
+                                    <div class="c-grey">{{message.date.slice(11,16)}}</div>
                                 </div>
                             </div>
-                     
+                        </div>
+
                     </div>
 
                     <div class="col-4c bg-lightgrey d-flex">
                         <div><i class="fa-regular fa-face-smile icon-write"></i></div>
-                        <input class="write-text" placeholder="scrivi messaggio" v-model="newMessage" @keyup.enter="addMessage">
+                        <input class="write-text" placeholder="scrivi messaggio" v-model="newMessage"
+                            @keyup.enter="addMessage">
                         <div><i class="fa-solid fa-microphone icon-write"></i></div>
                     </div>
                 </div>
