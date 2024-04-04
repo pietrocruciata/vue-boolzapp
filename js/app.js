@@ -166,19 +166,42 @@ createApp({
           ],
         }
       ],
-
+      newMessage: '',
       currentChat: 0
     }
 
   },
 
   methods: {
+    addMessage() {
+      if (this.newMessage !== '') {
+        this.newMessage = {
+          date: '10/01/2020 15:30:55',
+          message: this.newMessage,
+          status: 'sent'
+        }
+        this.contacts[this.currentChat].messages.push(this.newMessage)
+        this.newMessage = ''
+        setTimeout(() => {
+          this.newMessage = {
+            date: '10/01/2020 19:30:55',
+            message: 'OK!!',
+            status: 'received'
+          }
+          this.contacts[this.currentChat].messages.push(this.newMessage)
+          this.newMessage = ''
+        }, 1000)
+      }
 
+
+
+    },
 
   },
 
   mounted() {
     console.log(this.contacts[0].messages[0].status);
+    console.log(this.addMessage());
   }
 
 }).mount('#app')

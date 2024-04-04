@@ -56,105 +56,6 @@
                                 <div class="c-grey">16:15</div>
                             </div>
                         </div>
-
-
-                        <!-- <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_3.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Salvatore</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div>
-                        </div>
-
-
-                         <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_4.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Alberto</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div>
-                        </div>  -->
-
-
-                        <!-- <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_5.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Luca</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div>
-                        </div>  -->
-
-                        <!-- 
-                        <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_6.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Caterina</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div>
-                        </div> -->
-
-
-                        <!-- <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_7.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Massimo</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div>
-                        </div> -->
-
-                        <!-- 
-                        <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_8.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Raffaele</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div>
-                        </div> -->
-
-
-                        <!-- <div class="col-4h d-flex">
-                            <div class="card-img">
-                                <div><img src="./img/avatar_io.jpg" alt="" class="img-size"></div>
-                            </div>
-                            <div class="card-text">
-                                <div><strong>Maria</strong></div>
-                                <div class="c-grey">Lorem ipsum dolor sit.</div>
-                            </div>
-                            <div class="card-time">
-                                <div class="c-grey">16:15</div>
-                            </div> 
-                        </div>  -->
-
                     </div>
                 </div>
 
@@ -179,10 +80,10 @@
                 <div class="container-central">
                     <div class="col-1c bg-lightgrey d-flex">
                         <div class="card-img">
-                            <div><img src="./img/avatar_1.jpg" alt="" class="img-size"></div>
+                            <div><img :src="contacts[currentChat].avatar" alt="" class="img-size"></div>
                         </div>
                         <div class="card-text">
-                            <div><strong>Michele</strong></div>
+                            <div><strong>{{contacts[currentChat].name}}</strong></div>
                             <div class="c-grey">Ultimo accesso oggi alle 16:26</div>
                         </div>
                         <div class="card-icon gap-40">
@@ -194,23 +95,27 @@
                     </div>
 
                     <div class="containe-img">
-                        <div class="col-2c ">
+                        
 
-                            <div :class="message.status" v-for="(message, i) in contacts[currentChat].messages">
-                                <div  >
-                                   {{message.message}}
-                                </div>
-                                <div class="finger-message">
-                                    <i class="fa-solid fa-chevron-down c-grey"></i>
-                                    <div class="c-grey">16:13</div>
+
+                            <div class="col-2c ">
+
+                                <div :class="message.status" v-for="(message, i) in contacts[currentChat].messages">
+                                    <div>
+                                        {{message.message}}
+                                    </div>
+                                    <div class="finger-message">
+                                        <i class="fa-solid fa-chevron-down c-grey"></i>
+                                        <div class="c-grey">{{message.date.slice(11,16)}}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                     
                     </div>
 
                     <div class="col-4c bg-lightgrey d-flex">
                         <div><i class="fa-regular fa-face-smile icon-write"></i></div>
-                        <input class="write-text" placeholder="scrivi messaggio">
+                        <input class="write-text" placeholder="scrivi messaggio" v-model="newMessage" @keyup.enter="addMessage">
                         <div><i class="fa-solid fa-microphone icon-write"></i></div>
                     </div>
                 </div>
