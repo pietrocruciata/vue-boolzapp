@@ -45,7 +45,7 @@
                         </div>
                         <!--CHATS CARDS-->
                         <div class="col-4h d-flex contact" v-for="(contact, i) in contacts" @click="currentChat = i"
-                            :class="contact.name.toLowerCase().includes(search) || contact.name.toUpperCase().includes(search)  ? '': 'hidden'">
+                            :class="contact.name.toLowerCase().includes(search.toLowerCase())  ? '': 'hidden'">
                             <div class="card-img">
                                 <div><img :src="contact.avatar" alt="" class="img-size"></div>
                             </div>
@@ -88,7 +88,14 @@
                         </div>
                         <div class="card-text">
                             <div><strong>{{contacts[currentChat].name}}</strong></div>
-                            <div class="c-grey">Ultimo accesso oggi alle 16:26</div>
+                            <div class="d-flex ">
+                                Ultimo accesso:
+                                <div class="c-grey" v-if="contacts[currentChat].messages.at(-1).status === 'received'">
+                                    {{contacts[currentChat].messages.at(-1).date.slice(11,16)}}</div>
+                                <div class="c-grey"
+                                    v-else="contacts[currentChat].messages.at(-1).status === 'received'">
+                                    {{contacts[currentChat].messages.at(-2).date.slice(11,16)}}</div>
+                            </div>
                         </div>
                         <div class="card-icon gap-40">
                             <div><i class="fa-solid fa-magnifying-glass"></i></div>

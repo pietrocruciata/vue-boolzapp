@@ -182,20 +182,20 @@ createApp({
           message: this.newMessage,
           status: 'sent'
         }
-        
-        const messages =  this.contacts[this.currentChat].messages
+
+        const messages = this.contacts[this.currentChat].messages
         messages.push(message)
         this.newMessage = ''
 
         setTimeout(() => {
-          const message= {
+          const message = {
             date: '10/01/2020 19:30:55',
             message: 'OK!!',
             status: 'received'
           }
           messages.push(message)
           this.newMessage = ''
-        }, 1000)
+        }, 2000)
       }
     },
 
@@ -212,21 +212,17 @@ createApp({
       }
       console.log('sto cliccando');
     },
-
-
-
-
   },
 
   computed: {
- 
+
   },
 
   mounted() {
-   
-    this.menu = this.contacts.map(()=>{
+
+    this.menu = this.contacts.map(() => {
       return {
-        menuItem : true
+        menuItem: true
       }
     })
   },

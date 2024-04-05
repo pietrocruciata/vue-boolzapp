@@ -68,21 +68,22 @@ menu {
 
 }
 
-.message-info:hover{
+.message-info:hover {
     background-color: grey;
-    color : white
+    color: white
 }
 
 
 
 .noview {
     display: none;
-    background-color: white;
+    background-color: rgb(233, 233, 233);
     position: absolute;
-    width: 120px;
-    padding: 5px;
+    width: max-content;
+    padding: 10px;
     top: 32px;
     right: 2px;
+    border-radius: 20px;
 }
 
 select {
