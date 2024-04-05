@@ -168,7 +168,8 @@ createApp({
       ],
       search: '',
       newMessage: '',
-      currentChat: 0
+      currentChat: 0,
+      menu: []
     }
 
   },
@@ -176,37 +177,62 @@ createApp({
   methods: {
     addMessage() {
       if (this.newMessage !== '') {
-        this.newMessage = {
+        const message = {
           date: '10/01/2020 15:30:55',
           message: this.newMessage,
           status: 'sent'
         }
-        this.contacts[this.currentChat].messages.push(this.newMessage)
+        
+        const messages =  this.contacts[this.currentChat].messages
+        messages.push(message)
         this.newMessage = ''
+
         setTimeout(() => {
-          this.newMessage = {
+          const message= {
             date: '10/01/2020 19:30:55',
             message: 'OK!!',
             status: 'received'
           }
-          this.contacts[this.currentChat].messages.push(this.newMessage)
+          messages.push(message)
           this.newMessage = ''
         }, 1000)
       }
     },
-    
-    deleteMessage() {
+
+    deleteMessage(i) {
       this.contacts[this.currentChat].messages.splice(i, 1)
+      this.changeMenu(i)
       console.log('sto eliminando il messaggio');
-    }
+    },
+    changeMenu(i) {
+      if (this.menu[i] === true) {
+        this.menu[i] = false
+      } else {
+        this.menu[i] = true
+      }
+      console.log('sto cliccando');
+    },
+
+
+
+
   },
 
   computed: {
-
+ 
   },
 
   mounted() {
+   
+    this.menu = this.contacts.map(()=>{
+      return {
+        menuItem : true
+      }
+    })
+  },
 
-  }
+
+
+
 
 }).mount('#app')

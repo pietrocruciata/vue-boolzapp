@@ -44,7 +44,8 @@
 
                         </div>
                         <!--CHATS CARDS-->
-                        <div class="col-4h d-flex contact" v-for="(contact, i) in contacts" @click="currentChat = i" :class="contact.name.toLowerCase().includes(search) || contact.name.toUpperCase().includes(search)  ? '': 'hidden'">
+                        <div class="col-4h d-flex contact" v-for="(contact, i) in contacts" @click="currentChat = i"
+                            :class="contact.name.toLowerCase().includes(search) || contact.name.toUpperCase().includes(search)  ? '': 'hidden'">
                             <div class="card-img">
                                 <div><img :src="contact.avatar" alt="" class="img-size"></div>
                             </div>
@@ -53,10 +54,10 @@
                                 <div>
                                     <div class="c-grey">{{contact.messages.at(-1).message}}</div>
                                 </div>
-                                
+
                             </div>
                             <div class="card-time">
-                                <div class="c-grey">16:15</div>
+                                <div class="c-grey">{{contact.messages.at(-1).date.slice(11,16)}}</div>
                             </div>
                         </div>
                     </div>
@@ -108,12 +109,15 @@
                                     {{message.message}}
                                 </div>
                                 <div class="finger-message">
-                                    <select name="" id="">
-                                        
-                                        <option value="">message info</option>
-                                        <option value="" @click=" deleteMessage()">delete message</option>
-                                        
-                                    </select>
+
+                                    <i class="fa-solid fa-angle-down arrow" @click="changeMenu(i)"></i>
+                                    <ul class="noview " :class="menu[i] === true ? 'd-block' : ''">
+                                        <li class="message-info">message info</li>
+                                        <li @click="deleteMessage(i)" class="message-info">delete message</li>
+                                    </ul>
+
+
+
                                     <div class="c-grey">{{message.date.slice(11,16)}}</div>
                                 </div>
                             </div>

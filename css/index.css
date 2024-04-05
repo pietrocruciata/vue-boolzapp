@@ -53,35 +53,70 @@ menu {
     border-radius: 20px;
 }
 
+
+
+.d-block {
+    display: block !important;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.message-info {
+    cursor: pointer;
+
+}
+
+.message-info:hover{
+    background-color: grey;
+    color : white
+}
+
+
+
+.noview {
+    display: none;
+    background-color: white;
+    position: absolute;
+    width: 120px;
+    padding: 5px;
+    top: 32px;
+    right: 2px;
+}
+
+select {
+    border: none;
+    width: 15px;
+}
+
+.received {
+    background-color: white;
+    width: 40%;
+    border-radius: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 20px;
+
+}
+
 .sent {
     background-color: lightgreen;
-    width: 50%;
+    width: 40%;
     border-radius: 20px;
     padding: 10px;
     align-self: flex-end;
     justify-content: space-between;
     display: flex;
-}
-
-select{
-border: none;
-width: 15px;
-}
-
-.received {
-    background-color: white;
-    width: 50%;
-    border-radius: 20px;
-    padding: 10px;
-    justify-content: space-between;
-    display: flex;
-
+    margin-right: 20px;
 }
 
 .finger-message {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 
 }
 
@@ -160,7 +195,7 @@ width: 15px;
     width: 100%;
     padding: 20px;
     flex-direction: column;
-    gap: 15px;
+    gap: 35px;
     display: flex;
     flex-wrap: wrap;
 
@@ -211,7 +246,7 @@ input {
     border: none;
 }
 
-.contact.hidden{
+.contact.hidden {
     display: none;
 }
 
