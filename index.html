@@ -93,7 +93,7 @@
                                 <div class="c-grey" v-if="contacts[currentChat].messages.at(-1).status === 'received'">
                                     {{contacts[currentChat].messages.at(-1).date.slice(11,16)}}</div>
                                 <div class="c-grey"
-                                    v-else="contacts[currentChat].messages.at(-1).status === 'received'">
+                                    v-else>
                                     {{contacts[currentChat].messages.at(-2).date.slice(11,16)}}</div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                     </ul>
 
 
-
+                                    <!-- Date().slice(16,21) -->
                                     <div class="c-grey">{{message.date.slice(11,16)}}</div>
                                 </div>
                             </div>

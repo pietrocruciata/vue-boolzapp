@@ -182,20 +182,20 @@ createApp({
           message: this.newMessage,
           status: 'sent'
         }
-
-        const messages = this.contacts[this.currentChat].messages
+        
+        const messages =  this.contacts[this.currentChat].messages
         messages.push(message)
         this.newMessage = ''
 
         setTimeout(() => {
-          const message = {
+          const message= {
             date: '10/01/2020 19:30:55',
             message: 'OK!!',
             status: 'received'
           }
           messages.push(message)
           this.newMessage = ''
-        }, 2000)
+        }, 1000)
       }
     },
 
@@ -212,17 +212,23 @@ createApp({
       }
       console.log('sto cliccando');
     },
+
+
+
+
   },
 
   computed: {
-
+ 
   },
 
   mounted() {
-
-    this.menu = this.contacts.map(() => {
+    let dateWithouthSecond = new Date();
+    hours = dateWithouthSecond.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+    
+    this.menu = this.contacts.map(()=>{
       return {
-        menuItem: true
+        menuItem : true
       }
     })
   },
